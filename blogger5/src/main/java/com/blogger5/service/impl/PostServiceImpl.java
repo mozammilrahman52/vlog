@@ -1,6 +1,7 @@
-package com.blogger5.service.impl;
+package com.blogger5.service.Impl;
 
 import com.blogger5.entity.Post;
+import com.blogger5.exception.ResourceNotFound;
 import com.blogger5.repository.PostRepository;
 import com.blogger5.service.PostService;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -15,8 +16,10 @@ public class PostServiceImpl implements PostService {
     }
     @Override
     public void deleteById(long id) {
-
+        try {
             postRepository.deleteById(id);
-
+        } catch (EmptyResultDataAccessException ex) {
+            throw new ResourceNotFound("Post Not Found with id: " + id);
+        }
     }
 }
