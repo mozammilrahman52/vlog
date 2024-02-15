@@ -1,4 +1,4 @@
-package com.blogger5.service.Impl;
+package com.blogger5.service.impl;
 
 import com.blogger5.entity.Post;
 import com.blogger5.exception.ResourceNotFound;
