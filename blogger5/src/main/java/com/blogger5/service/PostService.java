@@ -3,9 +3,8 @@ import com.blogger5.payload.PostDto;
 public interface PostService {
     void deleteById(long id);
 
+    PostDto getPostById(long id);
 
-public interface PostService {
 
-    PostDto getPostById(Long id);
-}
+    void getAllPost();
 }
