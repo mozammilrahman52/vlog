@@ -35,9 +35,24 @@ public class PostController {
         return new ResponseEntity(dto,HttpStatus.OK);
     }
 
-    @GetMapping
-    public ResponseEntity<PostDto> getAllPost(){
-        postService.getAllPost();
-    }
+
+        //http://localhost:8080/api/post
+        @PostMapping
+        public ResponseEntity<PostDto> saveDto (@RequestBody PostDto postDto){
+            PostDto dto = postService.savePost(postDto);
+            return new ResponseEntity<>(dto, HttpStatus.CREATED);//201
+        }
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
